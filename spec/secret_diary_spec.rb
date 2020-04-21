@@ -1,8 +1,6 @@
 require 'secret_diary'
 RSpec.describe SecretDiary do 
 
-  subject(:diary) { described_class.new }
-
   # it {is_expected.to respond_to(:add_entry).with(1).argument}
 
   context 'when locked' do 
@@ -27,7 +25,10 @@ RSpec.describe SecretDiary do
     end
     it 'adds entry to the diary' do
       subject.add_entry("entry")
-      expect(subject.stored_entries).to include "entry"
+      expect(subject.stored_entries).to include "entry" 
+    end
+    it 'gets entries and outputs them' do
+      expect(subject.get_entries).to eq(subject.stored_entries)
     end
   end
 end

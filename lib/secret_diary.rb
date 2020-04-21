@@ -1,7 +1,7 @@
 class SecretDiary
 
   attr_reader :locked
-  attr_reader :stored_entries
+  attr_accessor :stored_entries
 
   def initialize
     @locked = true
@@ -15,6 +15,7 @@ class SecretDiary
 
   def get_entries
     raise 'Cannot get entries: Diary is locked' if @locked == true
+    @stored_entries
   end
   
   def unlock
