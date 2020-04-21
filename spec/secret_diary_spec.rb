@@ -30,5 +30,9 @@ RSpec.describe SecretDiary do
     it 'gets entries and outputs them' do
       expect(subject.get_entries).to eq(subject.stored_entries)
     end
+    it 'locks secret diary' do 
+      subject.lock
+      expect(subject.locked).to be true
+    end
   end
 end
