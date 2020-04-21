@@ -15,7 +15,7 @@ RSpec.describe SecretDiary do
     end
     it 'unlocks the diary' do 
       subject.unlock
-      expect(subject.locked).to be false
+      expect(subject.unlock).to be false
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe SecretDiary do
     end
     it 'locks secret diary' do 
       subject.lock
-      expect(subject.locked).to be true
+      expect(subject.lock).to be true
     end
   end
 end
