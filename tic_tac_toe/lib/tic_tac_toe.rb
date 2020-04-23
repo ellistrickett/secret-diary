@@ -6,4 +6,13 @@ class TicTacToe
     @board = "---,---,---"
   end
 
+  def move(x)
+    @board = x
+    print_board
+  end
+
+  def print_board
+    @board
+  end
+
 end
